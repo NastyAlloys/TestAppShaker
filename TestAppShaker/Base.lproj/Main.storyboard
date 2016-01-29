@@ -14,6 +14,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="y0e-R3-hL3">
+                            <rect key="frame" x="0.0" y="297" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QXi-Gh-fvh">
+                                    <rect key="frame" x="290" y="12" width="20" height="20"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="QXi-Gh-fvh" firstAttribute="centerY" secondItem="y0e-R3-hL3" secondAttribute="centerY" id="Iwh-To-0So"/>
+                                <constraint firstItem="QXi-Gh-fvh" firstAttribute="centerX" secondItem="y0e-R3-hL3" secondAttribute="centerX" id="qZP-RW-5Vk"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageCell" rowHeight="205" id="Kuu-3u-oHC" customClass="ImageCell" customModule="TestAppShaker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="205"/>
@@ -115,6 +129,8 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="cKv-5V-bXP"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="QXi-Gh-fvh" id="mSP-1p-WRd"/>
+                        <outlet property="activityIndicatorView" destination="y0e-R3-hL3" id="gvB-ox-kvi"/>
                         <outlet property="tableView" destination="ABR-ON-elu" id="3vE-yr-Yak"/>
                     </connections>
                 </tableViewController>

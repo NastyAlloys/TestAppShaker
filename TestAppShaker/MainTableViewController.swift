@@ -16,8 +16,14 @@ class MainTableViewController: UITableViewController, WebSocketDelegate {
     var dataArray: [JSON] = []
     let cellIdentifier = "ImageCell"
     
+    @IBOutlet weak var activityIndicatorView: UIView!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
         socket.delegate = self
         socket.connect()
     }
@@ -114,6 +120,7 @@ class MainTableViewController: UITableViewController, WebSocketDelegate {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             self.tableView.reloadData()
             self.tableView.scrollRectToVisible(CGRectMake(0, 0, 1, 1), animated: false)
+            self.activityIndicator.stopAnimating()
         })
     }
     
